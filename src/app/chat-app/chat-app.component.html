@@ -1,0 +1,10 @@
+<div class="content">
+  <app-chat-screen class="chat-screen" [messages]="messages"/>
+  <div class="client-list">
+    <app-chat-client
+      *ngFor="let user of activeUsers | async"
+      (sentMessage)="handleMessage($event)"
+      [userName]="user"/>
+    <button class="add-user-button styled-button" (click)="addUser()">Add user</button>
+  </div>
+</div>

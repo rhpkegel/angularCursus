@@ -1,0 +1,14 @@
+.content{
+  display: flex;
+  flex-direction: column;
+  .client-list{
+    position: absolute;
+    bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+
+    .add-user-button{
+      align-self: center;
+    }
+  }
+}

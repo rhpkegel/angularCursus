@@ -1,0 +1,5 @@
+<div #content class="content">
+  <div #messageList *ngFor="let message of messages">
+    <span class="timestamp">[{{message.timestamp | date: 'HH:mm'}}]</span> <b>{{message.clientName}}:</b> {{message.message}}
+  </div>
+</div>

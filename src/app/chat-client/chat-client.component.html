@@ -1,0 +1,10 @@
+<div class="content">
+  <div class="header"><b>User:</b> {{userName}}</div>
+  <div class="message-field">
+    <textarea [(ngModel)]="message"></textarea>
+  </div>
+  <div class="buttons-container">
+  <button class="styled-button" (click)="sendMessage()">Send Message</button>
+  <button class="styled-button" (click)="leaveChat()">Leave</button>
+  </div>
+</div>
