@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {ChatMessage} from "../chat.models";
+import {ChatMessage, User} from "../chat.models";
 import {UserService} from "../user.service";
 
 @Component({
@@ -10,18 +10,22 @@ import {UserService} from "../user.service";
 export class ChatClientComponent {
 
   @Input()
-  userName: string = 'test';
+  user: User = {id: -1, achternaam: 'anonymous'};
   @Input()
   message: string = '';
   @Output()
   sentMessage: EventEmitter<ChatMessage> = new EventEmitter<ChatMessage>()
+
+  get formattedName(): string{
+    return `${this.user.voornaam? this.user.voornaam+' ' : ''}${this.user.achternaam}`
+  }
 
   constructor(private userService: UserService) {
   }
 
   sendMessage() {
     this.sentMessage.emit({
-      clientName: this.userName,
+      client: this.user,
       message: this.message,
       timestamp: new Date()
     });
@@ -29,6 +33,8 @@ export class ChatClientComponent {
   }
 
   leaveChat() {
-    this.userService.removeUserFromChat(this.userName)
+    if(this.user.id){
+      this.userService.removeUserFromChat(this.user.id);
+    }
   }
 }

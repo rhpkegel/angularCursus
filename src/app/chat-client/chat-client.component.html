@@ -1,5 +1,5 @@
 <div class="content">
-  <div class="header"><b>User:</b> {{userName}}</div>
+  <div class="header"><b>User:</b> {{user | formatUsername}}</div>
   <div class="message-field">
     <textarea [(ngModel)]="message"></textarea>
   </div>

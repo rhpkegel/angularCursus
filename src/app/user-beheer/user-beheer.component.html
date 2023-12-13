@@ -1,1 +1,19 @@
-<p>user-beheer works!</p>
+<div class="user-list">
+  <h2>Current users</h2>
+  <div class="user" *ngFor="let user of users | async">{{user | formatUsername}}</div>
+</div>
+
+<div class="form-container">
+<h2>Add user</h2>
+  <div class="form">
+  <mat-form-field>
+    <mat-label>Voornaam</mat-label>
+    <input [formControl]="userForm.controls.voornaam" matInput placeholder="Amazing">
+  </mat-form-field>
+  <mat-form-field>
+  <mat-label>Achternaam</mat-label>
+  <input [formControl]="userForm.controls.achternaam" matInput placeholder="Cobra">
+  </mat-form-field>
+  <button (click)="submitUserForm()" mat-button color="primary">Add user</button>
+  </div>
+</div>

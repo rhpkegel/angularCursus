@@ -1,5 +1,11 @@
 export interface ChatMessage {
-  clientName: string;
+  client: User;
   message: string;
   timestamp: Date;
+}
+
+export interface User {
+  id?: number;
+  voornaam?: string;
+  achternaam: string;
 }

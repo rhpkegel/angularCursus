@@ -10,8 +10,8 @@ export class ChatScreenComponent implements AfterViewChecked{
   @Input()
   messages: ChatMessage[] = [];
 
-  @ViewChild('content') content: ElementRef | undefined;
-  @ViewChildren('messageList') messageItems: QueryList<never> | undefined;
+  @ViewChild('content') content?: ElementRef;
+  @ViewChildren('messageList') messageItems?: QueryList<never>;
 
   ngAfterViewChecked(): void {
     this.messageItems?.changes.subscribe({

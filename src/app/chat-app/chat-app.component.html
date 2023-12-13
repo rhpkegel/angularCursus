@@ -4,7 +4,7 @@
     <app-chat-client
       *ngFor="let user of activeUsers | async"
       (sentMessage)="handleMessage($event)"
-      [userName]="user"/>
+      [user]="user"/>
     <button class="add-user-button styled-button" (click)="addUser()">Add user</button>
   </div>
 </div>

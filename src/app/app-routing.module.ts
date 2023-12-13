@@ -5,7 +5,7 @@ import {ChatAppComponent} from "./chat-app/chat-app.component";
 
 const routes: Routes = [
   {path: '', component: ChatAppComponent},
-  {path: 'users', component: UserBeheerComponent, canActivate: [()=>false]}
+  {path: 'users', component: UserBeheerComponent}
 ];
 
 @NgModule({
